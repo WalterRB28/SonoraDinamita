@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json .
 
-RUN npn ci --only=production
+RUN npm ci --only=production
 COPY . .
 
 CMD ["node", "server.js"]
