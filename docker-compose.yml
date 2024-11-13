@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     
     depends_on:
-      -db
+      - db
 
     ports:
       - "3000:3000"
@@ -16,10 +16,10 @@ services:
       - PORT=${PORT}
       - JWT_SECRET=${JWT_SECRET}
 
-    db:
-      image: mongo:8.0.3
-      volumes:
-        - mongo-data:/data/db
+  db:
+    image: mongo:8.0.3
+    volumes:
+      - mongo-data:/data/db
     
 volumes:
   mongo-data:
